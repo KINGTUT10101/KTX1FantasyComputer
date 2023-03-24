@@ -41,3 +41,5 @@ The KTX1 is a fantasy 8-bit computer made in LOVE2D.
 - Press R to reset the computer
 - Press L to stop the execution of the current program
 - Press S to toggle a view of data memory
+- Press Q to toggle turbo mode
+- Press SPACE to toggle paue mode
