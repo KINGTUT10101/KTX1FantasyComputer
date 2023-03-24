@@ -1,0 +1,115 @@
+% 0 0 // UPPER LEFT EYE
+LDU 0 // Return bank param
+LDL 1
+ATM 2
+LDU 2 // Ending address param
+LDL 4
+ATM 1
+LDU 2 // Starting address param
+LDL 4
+ATM 0
+LDU 0 // Call procedure
+LDL 15
+SMB 0
+
+% 1 0 // UPPER RIGHT EYE
+LDU 0 // Return bank param
+LDL 2
+ATM 2
+LDU 2 // Ending address param
+LDL 11
+ATM 1
+LDU 2 // Starting address param
+LDL 11
+ATM 0
+LDU 0 // Call procedure
+LDL 15
+SMB 0
+
+% 2 0 // LOWER LEFT EYE
+LDU 0 // Return bank param
+LDL 3
+ATM 2
+LDU 3 // Ending address param
+LDL 4
+ATM 1
+LDU 3 // Starting address param
+LDL 4
+ATM 0
+LDU 0 // Call procedure
+LDL 15
+SMB 0
+
+% 3 0 // LOWER RIGHT EYE
+LDU 0 // Return bank param
+LDL 4
+ATM 2
+LDU 3 // Ending address param
+LDL 11
+ATM 1
+LDU 3 // Starting address param
+LDL 11
+ATM 0
+LDU 0 // Call procedure
+LDL 15
+SMB 0
+
+% 4 0 // LEFT CHEEK
+LDU 0 // Return bank param
+LDL 5
+ATM 2
+LDU 10 // Ending address param
+LDL 2
+ATM 1
+LDU 10 // Starting address param
+LDL 2
+ATM 0
+LDU 0 // Call procedure
+LDL 15
+SMB 0
+
+% 5 0 // RIGHT CHEEK
+LDU 0 // Return bank param
+LDL 6
+ATM 2
+LDU 10 // Ending address param
+LDL 13
+ATM 1
+LDU 10 // Starting address param
+LDL 13
+ATM 0
+LDU 0 // Call procedure
+LDL 15
+SMB 0
+
+% 6 0 // MOUTH
+LDU 0 // Return bank param
+LDL 7
+ATM 2
+LDU 11 // Ending address param
+LDL 12
+ATM 1
+LDU 11 // Starting address param
+LDL 3
+ATM 0
+LDU 0 // Call procedure
+LDL 15
+SMB 0
+
+% 15 0 // RENDERING PROCEDURE
+SVM 0 // Toggle pixel
+MTA 1 // Check loop confition
+SUB 0
+BNZ 6
+LDL 1
+BNZ 13
+LDU 0 // Increment starting address
+LDL 1
+ADD 0
+ATM 0
+LDU 0
+LDL 1
+BNZ 0 // Restart loop
+MTA 2 // Exit procedure and move pbank to value of $2
+LDU 0
+SMB 0

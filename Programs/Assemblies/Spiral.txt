@@ -1,0 +1,135 @@
+% 0 0 // Initialization 1
+LDU 1 // y inc constant
+LDL 0
+ATM 1
+LDU 0 // x inc constant
+LDL 1
+ATM 0
+LDL 0 // Screen x position
+ATM 2
+LDL 0 // Screen y position
+ATM 3
+LDL 0 // Combined screen position
+ATM 4
+LDL 1 // Swap bank
+SMB 0
+
+% 1 0 // Initialization 2
+LDL 15 // Iteration size
+ATM 15
+LDL 0 // Iterator
+ATM 14
+LDL 2 // Iteration size decrement
+ATM 13
+LDU 15 // Used for checking value of iteration size
+LDL 15
+ATM 12
+LDU 0 // Swap bank
+LDL 2
+SMB 0
+
+% 2 0 // Top
+SVM 4 // Toggle pixel
+MTA 2 // Increment x position
+ADD 0
+LDU 0
+ATM 2
+ADD 3 // Update combined screen position
+ATM 4
+MTA 0 // Increment iterator
+ADD 14
+ATM 14
+SUB 15 // Check if iteration size was reached
+BNZ 0
+LDL 0 // Reset iterator
+ATM 14
+LDL 3 // Swap banks when loop is over
+SMB 0
+
+% 3 0 // Right
+SVM 4 // Toggle pixel
+MTA 3 // Increment y position
+ADD 1
+LDL 0
+ATM 3
+ADD 2 // Update combined screen position
+ATM 4
+MTA 0 // Increment iterator
+ADD 14
+ATM 14
+SUB 15 // Check if iteration size was reached
+BNZ 0
+LDL 0 // Reset iterator
+ATM 14
+LDL 4 // Swap banks when loop is over
+SMB 0
+
+% 4 0 // Bottom
+SVM 4 // Toggle pixel
+MTA 2 // Decrement x position
+SUB 0
+LDU 0
+ATM 2
+ADD 3 // Update combined screen position
+ATM 4
+MTA 0 // Increment iterator
+ADD 14
+ATM 14
+SUB 15 // Check if iteration size was reached
+BNZ 0
+LDL 0 // Reset iterator
+ATM 14
+LDL 5 // Swap banks when loop is over
+SMB 0
+
+% 5 0 // Left
+SVM 4 // Toggle pixel
+MTA 3 // Decrement y position
+SUB 1
+LDL 0
+ATM 3
+ADD 2 // Update combined screen position
+ATM 4
+MTA 0 // Increment iterator
+ADD 14
+ATM 14
+SUB 15 // Check if iteration size was reached
+BNZ 0
+LDL 0 // Reset iterator
+ATM 14
+LDL 6 // Swap banks when loop is over
+SMB 0
+
+% 6 0 // Runs after each full cycle
+LDL 7 // Increments x and y positions
+SMB 0
+MTA 15 // Decrements the iteration size
+SUB 13
+ATM 15
+SUB 12 // Checks if the iteration size should be reset
+BNZ 14 // Resets iteration size and screen positions
+LDU 0
+LDL 15
+ATM 15
+LDL 0
+ATM 2
+ATM 3
+ATM 4
+LDL 2 // Swap banks to start the next cycle
+SMB 0
+
+% 7 0 // Increments the x and y positions
+MTA 2 // Increment x position
+ADD 0
+LDU 0
+ATM 2
+LDL 0 // Increment y position
+MTA 3
+ADD 1
+LDL 0
+ATM 3
+ADD 2 // Update combined screen position
+ATM 4
+LDU 0
+LDL 6
+SMB 2 // Goes back to bank 6 to finish the cycle

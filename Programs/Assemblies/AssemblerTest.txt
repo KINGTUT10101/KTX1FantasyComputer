@@ -1,0 +1,9 @@
+% 0 0 // Begin program
+LDU 0 // Load acc
+LDL 7
+ATM 0 // Load memory
+LDL 1
+ADD 0
+ATM 0
+SDD 0 // Set display
+END 0 // End program
