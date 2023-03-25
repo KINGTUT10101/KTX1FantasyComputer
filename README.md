@@ -27,6 +27,7 @@ The KTX1 is an 8-bit fantasy computer made in LOVE2D.
 - 1010 (BNZ): Branches to the program memory location referenced by the operand if the accumulator equals 0. The return address will also be set if the branch is successful
 - 1011 (BRT): Branches to the program memory location referenced by the return address (set by BNZ)
 - 1100 (SDD): Copies the value in the data memory location referenced by the operand into the numerical display
+- 1101 (SVM): Toggles the pixel referenced by the value inside the data address referenced by the operand. The upper half of the byte determines the y position and the lower half of the byte determines the x position
 - 1110 (SMB): Switches to the data memory bank referenced by the upper half of the accumulator, switches to the program memory bank referenced by the lower half of the accumulator, and sets the program counter to the value of the operand
 - 1111: A meta instruction that is used to edit and run programs. It is not intended to be used in programs. The upper half of the operand determines what action to perform (see below)
 
