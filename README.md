@@ -39,7 +39,7 @@ The KTX1 is an 8-bit fantasy computer made in LOVE2D.
 
 ### Final Notes:
 - To use the external assembler, drag an assembly file onto the window. This will copy the binary program onto your keyboard. Simply paste this text into a new file and drag that into the simulator to run the program
-- Add "% x y" before a block of code to change where it appears in program memory. x is the program bank number and y is the location within that bank
+- Add "% A B" before a block of code to change where it appears in program memory. A is the program bank number and B is the location within that bank
 - You can create an edit programs directly in the simulator. Just set the input bits and push enter. This will copy the input into the program memory location referenced by the program counter
 - After you've input the program, you can run it by entering 11110000
 - Press keys 1-8 to set the input bits
@@ -47,4 +47,4 @@ The KTX1 is an 8-bit fantasy computer made in LOVE2D.
 - Press L to stop the execution of the current program
 - Press S to toggle a view of data memory
 - Press Q to toggle turbo mode
-- Press SPACE to toggle paue mode
+- Press SPACE to toggle pause mode
