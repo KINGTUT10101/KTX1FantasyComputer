@@ -5,7 +5,7 @@ The KTX1 is an 8-bit fantasy computer made in LOVE2D.
 
 ### Features
 - 8-bit instruction set (4-bit opcode and 4-bit operand)
-- 256 bytes of data memory and 256 bytes of program memory (broken into 16 byte memory banks)
+- Harvard architecture: 256 bytes of data memory and 256 bytes of program memory (broken into 16 byte memory banks)
 - Includes an accumulator, program counter, and state register
 - 16x16p display
 - 1 byte numerical display
