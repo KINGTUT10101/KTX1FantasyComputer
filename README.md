@@ -1,4 +1,4 @@
-[![](https://github.com/KINGTUT10101/KTX1FantasyComputer/blob/main/thumbnail.png)](http://https://github.com/KINGTUT10101/KTX1FantasyComputer/blob/main/thumbnail.png)
+[![](https://github.com/KINGTUT10101/KTX1FantasyComputer/blob/main/thumbnail.png)](https://github.com/KINGTUT10101/KTX1FantasyComputer/blob/main/thumbnail.png)
 # KTX1 Fantasy Computer
 The KTX1 is an 8-bit fantasy computer made in LOVE2D.
 
